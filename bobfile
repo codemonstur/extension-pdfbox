@@ -1,0 +1,16 @@
+include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-github-maven
+
+vendor: com.github.codemonstur
+name: extension-pdfbox
+version: 1.0.0
+packaging: jar
+release: 11
+description: Utility classes for using pdfbox
+license:
+  name: MIT
+developer:
+  name: Jurgen Voorneveld
+  email: jegvoorneveld@gmail.com
+enablePreview: false
+dependencies:
+  - repository: org.apache.pdfbox:pdfbox:3.0.0-RC1
