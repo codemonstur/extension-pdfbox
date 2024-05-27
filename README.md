@@ -1,6 +1,6 @@
 [![GitHub Release](https://img.shields.io/github/release/codemonstur/extension-pdfbox.svg)](https://github.com/codemonstur/extension-pdfbox/releases)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.codemonstur/extension-pdfbox/badge.svg)](http://mvnrepository.com/artifact/com.github.codemonstur/extension-pdfbox)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 # Extension-pdfbox
 
