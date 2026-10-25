@@ -6,7 +6,7 @@
     <version>1.2.0</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Utility classes for the JDK</description>
+    <description>Utility classes for using pdfbox</description>
     <url>https://github.com/codemonstur/extension-pdfbox</url>
 
     <licenses>
@@ -34,10 +34,11 @@
 
     <properties>
         <module.name>com.github.codemonstur.extension.pdfbox</module.name>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven.version>[3.6.3,)</maven.version>
         <maven.compiler.release>11</maven.compiler.release>
+        <maven.version>[3.6.3,)</maven.version>
 
         <version.library.pdfbox>3.0.0-RC1</version.library.pdfbox>
 
