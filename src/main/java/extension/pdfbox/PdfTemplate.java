@@ -59,7 +59,7 @@ public class PdfTemplate {
     private static PDDocument loadPdfFromResource(final String resource) throws IOException {
         try (final var in = PdfTemplate.class.getResourceAsStream(resource)) {
             if (in == null) throw new FileNotFoundException("Missing resource " + resource);
-            return Loader.loadPDF(in);
+            return Loader.loadPDF(in.readAllBytes());
         }
     }
 

@@ -3,6 +3,7 @@ package extension.pdfbox;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 import org.junit.jupiter.api.Test;
 
 import java.awt.Color;
@@ -45,7 +46,7 @@ class ExtensionPdfboxTest {
 
     @Test
     void overlay_centerXofString() throws Exception {
-        final var font = PDType1Font.HELVETICA;
+        final var font = new PDType1Font(Standard14Fonts.FontName.HELVETICA);
         final float x = Overlay.centerXofString("hi", font, 12, 200f);
         assertTrue(x >= 0);
     }
