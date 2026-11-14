@@ -12,8 +12,18 @@ import java.io.*;
 import static extension.pdfbox.LayoutPage.toLayoutPage;
 import static extension.pdfbox.Overlay.overlayPDF;
 
+/**
+ * The {@code PdfTemplate} class.
+ */
 public class PdfTemplate {
 
+    /**
+     * Returns the result of {@code newPdf}.
+     *
+     * @param resource the resource
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static PdfTemplate newPdf(final String resource) throws IOException {
         return new PdfTemplate(loadPdfFromResource(resource));
     }
@@ -23,35 +33,93 @@ public class PdfTemplate {
         this.template = template;
     }
 
+    /**
+     * Returns the result of {@code overlay}.
+     *
+     * @param resource the resource
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public PdfTemplate overlay(final String resource) throws IOException {
         return overlay(loadPdfFromResource(resource));
     }
+    /**
+     * Returns the result of {@code overlay}.
+     *
+     * @param overlay the overlay
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public PdfTemplate overlay(final PDDocument overlay) throws IOException {
         return overlay(overlay.getPage(0));
     }
+    /**
+     * Returns the result of {@code overlay}.
+     *
+     * @param overlay the overlay
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public PdfTemplate overlay(final PDPage overlay) throws IOException {
         return overlay(toLayoutPage(overlay));
     }
+    /**
+     * Returns the result of {@code overlay}.
+     *
+     * @param overlay the overlay
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public PdfTemplate overlay(final LayoutPage overlay) throws IOException {
         overlayPDF(template, overlay);
         return this;
     }
 
+    /**
+     * Returns the result of {@code toPdf}.
+     *
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public PDDocument toPdf() throws IOException {
         return template;
     }
+    /**
+     * Returns the result of {@code toImage}.
+     *
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public BufferedImage toImage() throws IOException {
         return new PDFRenderer(template).renderImage(0);
     }
+    /**
+     * Returns the result of {@code toByteArray}.
+     *
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public byte[] toByteArray() throws IOException {
         try (final var out = new ByteArrayOutputStream()) {
             template.save(out);
             return out.toByteArray();
         }
     }
+    /**
+     * Performs the {@code writeAsJpg} operation.
+     *
+     * @param out the out
+     * @throws IOException if the operation fails
+     */
     public void writeAsJpg(final OutputStream out) throws IOException {
         ImageIO.write(toImage(), "jpg", out);
     }
+    /**
+     * Performs the {@code writeAsPdf} operation.
+     *
+     * @param out the out
+     * @throws IOException if the operation fails
+     */
     public void writeAsPdf(final OutputStream out) throws IOException {
         template.save(out);
     }
